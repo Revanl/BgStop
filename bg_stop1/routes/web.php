@@ -10,8 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::post('posts/{id}', 'PostsController@comment');
-Route::resource('posts', 'PostsController');
+Route::post('/{id}', 'PostsController@comment');
+Route::resource('/', 'PostsController');
 //Route::get('posts', 'PostsController@home');
 
 
