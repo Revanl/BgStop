@@ -1,0 +1,296 @@
+*{
+    box-sizing: border-box;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+[class*="col-"] {
+
+    width: 100%;
+}
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+/*HEADER BAR MESSAGE BOX*/
+.triangleDown{
+    display:inline-block;
+    height:50px;
+    width:50px;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 25px solid black;
+    position:relative;
+    text-align:justify;
+}
+.triangleDown:nth-child(1){
+    background:#00AEEF;
+}
+.triangleDown:nth-child(2){
+    background:#0BA14B;
+}
+.triangleDown:nth-child(3){
+    background:#FFC522;
+}
+.triangleDown:nth-child(4){
+    background:#F1592A;
+}
+.triangleDown:nth-child(5){
+    background:#7F3F98;
+}
+.triangleDown:nth-child(6){
+    background:#FFF200;
+}
+.triangleDown>span{
+    font:16px book antiqua;
+    text-align:center;
+    margin:auto;
+    float:left;
+    width:50px!important;
+    height:50px!important;
+    position:absolute;
+    left:-25;
+}
+.headerBar>span{
+    margin:0 25px;
+}
+/*HEADER IMAGE*/
+#wrapper > header > .mainImg{
+    height:250px;
+    width:100%;
+}
+.dropDownButton{
+    height:25px;
+    width:25px;
+    position:fixed;
+    right:0;
+    top:0;
+    z-index:1000;
+}
+.NavItemDescription > ul > li {
+    display:none;
+    width:15%;
+    font:0.5em Book Antiqua;
+    height:150;
+    overflow: hidden;
+    text-overflow: clip;
+}
+.site-nav{
+    display:none;
+}
+#wrapper > header > nav > div > ul{
+    position:fixed;
+    top:0;
+    right:0;
+    width:25%;
+    padding:0;
+}
+#wrapper > header > nav > div > ul > li{
+    display:block;
+    height:40px;
+}
+#wrapper > header > nav > div > ul > li:nth-of-type(1){
+    margin-top:25px;
+}
+#wrapper > header > nav > div > ul > li > a{
+    display:inline-block;
+    width:100%;
+    height:100%;
+
+}
+/* Mobile phones*/
+@media (max-width: 767px){
+    /*LOGO*/
+    .bg_stop_logoPluginStyle{
+        margin:auto;
+        float: none!important;
+    }
+    .logoHookParent{
+        width:100%;
+        display:block;
+        clear:both;
+    }
+
+    /*NAV*/
+    #wrapper > header > nav > div > ul{
+        position:fixed;
+        width:25%;
+        background:black;
+        height:100vh;
+    }
+    #wrapper > header > nav > div > ul > li > a{
+        background:black;
+    }
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    /*HEADER BAR MESSAGE BOX*/
+    .triangleDown{
+        float:left;
+        display:inline-block;
+        height:50px;
+        width:50px;
+        border-left: 25px solid transparent;
+        border-right: 25px solid transparent;
+        border-top: 25px solid black;
+        position:relative;
+        margin:1px;
+    }
+    /*HEADER IMAGE*/
+    #wrapper > header > .mainImg{
+        height:300px;
+    }
+    .dropDownButton{
+        display:none;
+    }
+    .NavItemDescription > ul > li {
+        display:inline-block;
+        width:16%;
+        font:1em Book Antiqua;
+        height:150;
+    }
+    .site-nav{
+        display:inline!important;
+    }
+    #wrapper > header > nav > div > ul{
+        position:static;
+        width:100%;
+    }
+    #wrapper > header > nav > div > ul > li {
+        display:inline-block;
+        width:16%;
+        font:1.5em Impact;
+    }
+
+    #wrapper > header > nav > div > ul > li:nth-of-type(1){
+        margin-top:0px;
+    }
+    #wrapper > header > nav > div > ul > li > a{
+
+    }
+    /* NAVIGATION BORDER COLOR*/
+    #wrapper > header > nav > div > ul > li:nth-of-type(1){border-top: 7px solid #00aeef!important;}
+    #wrapper > header > nav > div > ul > li:nth-of-type(2){border-top: 7px solid #00a14b!important;}
+    #wrapper > header > nav > div > ul > li:nth-of-type(3){border-top: 7px solid #ffc522!important;}
+    #wrapper > header > nav > div > ul > li:nth-of-type(4){border-top: 7px solid #f15a29!important;}
+    #wrapper > header > nav > div > ul > li:nth-of-type(5){border-top: 7px solid #7f3f98!important;}
+    #wrapper > header > nav > div > ul > li:nth-of-type(6){border-top: 7px solid #21409a!important;}
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    /*HEADER IMAGE*/
+    #wrapper > header > .mainImg{
+        height:350px;
+    }
+    .dropDownButton{
+        display:none;
+    }
+    .NavItemDescription > ul > li {
+        display:inline-block;
+        width:16%;
+        font:1.5em Book Antiqua;
+        height:150;
+    }
+
+    #wrapper > header > nav > div > ul > li {
+        font:1.5em Impact;
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    /*HEADER IMAGE*/
+    #wrapper > header > .mainImg{
+        height:500px;
+    }
+    .dropDownButton{
+        display:none;
+    }
+    .NavItemDescription > ul > li {
+        display:inline-block;
+        width:16%;
+        font:1.5em Book Antiqua;
+        height:150;
+    }
+    #wrapper > header > nav > div > ul > li {
+        font:2em Impact;
+    }
+}
+/* HEADER NAVIGATION LINK TEXT DECORATIONS*/
+#wrapper > header > nav > div > ul > li > a:link {
+    text-decoration: none;
+}
+#wrapper > header > nav > div > ul > li > a:visited {
+    text-decoration: none;
+}
+#wrapper > header > nav > div > ul > li > a:hover {
+    text-decoration: none;
+}
+#wrapper > header > nav > div > ul > li > a:active {
+    text-decoration:none;
+}
+/* NAVIGATION BORDER COLOR ON HOVER*/
+/* #wrapper > header > nav > div > ul > li:hover{border-top: 7px solid #ffffff!important;} */
+/*NAVIGATION BACKGROUND-COLOR*/
+#wrapper > header > nav > div > ul > li{background: #ffffff!important;}
+/*NAVIGATION BACKGROUND-COLOR ON HOVER*/
+#wrapper > header > nav > div > ul > li:nth-of-type(1):hover{background: #00aeef!important;}
+#wrapper > header > nav > div > ul > li:nth-of-type(2):hover{background: #00a14b!important;}
+#wrapper > header > nav > div > ul > li:nth-of-type(3):hover{background: #ffc522!important;}
+#wrapper > header > nav > div > ul > li:nth-of-type(4):hover{background: #f15a29!important;}
+#wrapper > header > nav > div > ul > li:nth-of-type(5):hover{background: #7f3f98!important;}
+#wrapper > header > nav > div > ul > li:nth-of-type(6):hover{background: #21409a!important;}
+/*NAVIGATION TEXT COLOR*/
+#wrapper > header > nav > div > ul > li:nth-of-type(1)>a{color: #00aeef!important;}
+#wrapper > header > nav > div > ul > li:nth-of-type(2)>a{color: #00a14b!important;}
+#wrapper > header > nav > div > ul > li:nth-of-type(3)>a{color: #ffc522!important;}
+#wrapper > header > nav > div > ul > li:nth-of-type(4)>a{color: #f15a29!important;}
+#wrapper > header > nav > div > ul > li:nth-of-type(5)>a{color: #7f3f98!important;}
+#wrapper > header > nav > div > ul > li:nth-of-type(6)>a{color: #21409a!important;}
+/*NAVIGATION COLOR ON HOVER*/
+#wrapper > header > nav > div > ul > li:hover > a{color: white!important;}
+/*NAVIGATION ITEM DESCRIPTION*/
+#wrapper > header > div > ul {
+    padding:0;
+}
+.NavItemDescription{
+    background:white;
+    display:block;
+}
+/*FOOTER*/
+.footer{
+    background-color:black;
+    width:100%;
+    height:200px;
+}
+/*TITLE IN FOOTER*/
+.footerTitle{
+    font: 40px Book Antiqua;
+    color:#ffffff;
+}
+/*FOOTER NAVIGATION*/
+body > footer > nav > div > ul > li{
+    display:inline;
+}
+body > footer > nav > div > ul > li > a{
+    color:white;
+    font:33px Book Antiqua;
+}
+/* HEADER NAVIGATION LINK TEXT DECORATIONS*/
+body > footer > nav > div > ul > li > a:link {
+    text-decoration: none;
+}
+body > footer > nav > div > ul > li > a:visited {
+    text-decoration: none;
+}
+body > footer > nav > div > ul > li > a:hover {
+    color:grey;
+    text-decoration: none;
+}
+body > footer > nav > div > ul > li > a:active {
+    color:grey;
+    text-decoration:none;
+}

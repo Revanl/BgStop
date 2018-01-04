@@ -1,0 +1,522 @@
+//*{
+//  box-sizing: border-box;
+//}
+//.row::after {
+//  content: "";
+//  clear: both;
+//  display: table;
+//}
+//[class*="col-"] {
+  //float:left;
+  //width: 100%;
+//}
+div{word-wrap: break-word;}
+textarea{width:100%}
+a { text-decoration : none; color : #000; }
+img { max-width: 100%;height: auto; }
+a:link, a:visited {
+  color:inherit!important;
+  text-decoration: none!important;
+}
+a:hover, a:active {
+  color:inherit!important;
+  text-decoration: none!important;
+}
+.openContacts {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index:1000;
+  width:15%;
+}
+.openUnseen{
+  position: fixed;
+  left: 15%;
+  top: 0;
+  z-index:1000;
+  width:10%;
+}
+.contactsBox{
+  height:100vh;
+  display:none;
+  position: fixed;
+  left: 0;
+  top: 45px;
+  z-index:1000;
+  overflow:Scroll;
+}
+.unSeenBox{
+  height:100vh;
+  display:none;
+  position: fixed;
+  left: 0;
+  top: 45px;
+  z-index:1001;
+  overflow:Scroll;
+}
+.links > a {
+  color: #636b6f;
+  padding: 0 25px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.logoHookParent{
+  height:150px
+}
+.top-right {
+  position: absolute;
+  right: 10px;
+  top: 18px;
+}
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+/*HEADER BAR MESSAGE BOX*/
+.triangleDown {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-top: 25px solid black;
+ // position: relative;
+  text-align: justify;
+  &:nth-child(1) {
+    background: #00AEEF;
+  }
+  &:nth-child(2) {
+    background: #0BA14B;
+  }
+  &:nth-child(3) {
+    background: #FFC522;
+  }
+  &:nth-child(4) {
+    background: #F1592A;
+  }
+  &:nth-child(5) {
+    background: #7F3F98;
+  }
+  &:nth-child(6) {
+    background: #cc0000;
+  }
+  &:nth-child(7) {
+    background: #21409a;
+  }
+  .countPosition {
+    font: 18px book antiqua;
+    text-align: center;
+    float: right;
+    position: relative;
+    left:5px;
+  }
+    .messageBox {
+      z-index:1001;
+      font: 18px book antiqua;
+      text-align: center;
+      display:none;
+      position: absolute;
+      left: 0;
+      max-height:200px;
+      overflow:scroll;
+      .messageSeen {
+        position: relative;
+        background: greenyellow;
+        width: 100%;
+        border:5px solid black;
+        a{
+          display:block;
+        }
+      }
+      .messageUnseen {
+        position: relative;
+        background: red;
+        width: 100%;
+        border: 5px solid black;
+        a {
+          display: block;
+        }
+      }
+      .messageEmpty {
+        position: relative;
+        background: white;
+        width: 100%;
+        border:5px solid black;
+        a{
+          display:block;
+        }
+      }
+
+  }
+}
+.chatBox{
+  display:none;
+  background:white;
+  border:1px solid black;
+  z-index:1000;
+  position:fixed;
+  bottom:0;
+  right:0;
+
+  .chatHeader{
+
+  }
+  .chatTextBox{
+    height:50vh;
+    width:100%;
+    overflow:Scroll;
+  }
+  .chatMessageBox{
+    margin:0;
+    padding:0;
+    border-top:3px solid black;
+
+    #sendMessage{
+      padding:0;
+    }
+  }
+}
+.chatFileUploader{
+  display:none!important;
+}
+.getChatFileUploader{
+  font-size:20px;
+}
+.headerBar>span{
+  margin:0 25px;
+}
+/*HEADER IMAGE*/
+.mainImg{
+  height:250px;
+  width:100%;
+}
+.dropDownButton{
+  height:25px;
+  width:25px;
+  position:fixed;
+  right:0;
+  top:0;
+  z-index:1000;
+}
+.NavItemDescription > ul > li {
+  display:none;
+  width:14%;
+  font:0.5em Book Antiqua;
+  height:150px;
+  overflow: hidden;
+  text-overflow: clip;
+}
+nav {
+  display: none;
+  ul {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 25%;
+    padding: 0;
+    li {
+      display: block;
+      height: 40px;
+      &:nth-of-type(1) {
+        margin-top: 25px;
+      }
+      a {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+.rowHeight{
+  height:400px;
+  text-overflow: ellipsis;
+}
+.rowHeightSmall{
+  text-overflow: ellipsis;
+  height:100px;
+  /* Required for text-overflow to do anything */
+  white-space: nowrap;
+  overflow: hidden;
+}
+.limitText{
+  display: inline-block;
+  height: 100px;
+  overflow-y: auto;
+  /* this is to preserve text containing new lines */
+  white-space: pre-line;
+  word-wrap: break-word;
+  line-height: 25px;
+  text-overflow: ellipsis;
+
+}
+.itemImg{
+  width:150px;
+  height:150px;
+}
+/* Mobile phones*/
+@media (max-width: 768px){
+  .openContacts {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index:1000;
+    width:30%;
+  }
+  .openUnseen{
+    position: fixed;
+    left: 30%;
+    top: 0;
+    z-index:1000;
+    width:25%;
+  }
+  .chatBox {
+    width: 100%;
+  }
+  .contactsBox {
+    width:100%;
+  }
+  .unSeenBox{
+    width:100%;
+  }
+
+  .mainImg{
+    height:300px;
+  }
+  /*LOGO*/
+  //.bg_stop_logoPluginStyle{
+  //  margin:auto;
+  //  float: none!important;
+  //}
+  .logoHookParent{
+    clear:both;
+  }
+  .hideOnMobile{
+    display:none;
+  }
+  .menuOnMobile{
+    color:white;display:block;
+  }
+  /*NAV*/
+  nav > ul{
+    position:fixed;
+    width:25%;
+    background:black;
+    height:100vh;
+    z-index:1000;
+    li > a{
+      background:black;
+    }
+  }
+  .messageBox {
+    width:100%;
+    top: 75px;
+  }
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .chatBox {
+    width: 25%;
+  }
+  .contactsBox {
+    width:25%;
+  }
+  .unSeenBox{
+    width:25%;
+  }
+  .messageBox {
+    width: 310px;
+    top: 50px;
+  }
+  .logoHookParent {
+    float: left;
+    clear: both;
+  }
+  /*HEADER BAR MESSAGE BOX*/
+  .hideOnMobile{
+    display:inline;
+  }
+  .triangleParent {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    .triangleDown {
+      float: left;
+      margin: 1px;
+    }
+  }
+  /*HEADER IMAGE*/
+  .mainImg {
+    height: 300px;
+  }
+  .dropDownButton {
+    display: none;
+  }
+  .NavItemDescription > ul > li {
+    display: inline-block;
+    width: 13%;
+    font: 1.1em Book Antiqua;
+    height: 150px;
+  }
+  nav {
+    display: inline !important;
+    ul {
+      position: static;
+      width: 100%;
+      li {
+        display: inline-block;
+        width: 13%;
+        font: 1.1em Impact;
+        &:nth-of-type(1) {
+          margin-top: 0;
+          border-top: 7px solid #00aeef !important;
+        }
+        &:nth-of-type(2) {
+          border-top: 7px solid #00a14b !important;
+        }
+        &:nth-of-type(3) {
+          border-top: 7px solid #ffc522 !important;
+        }
+        &:nth-of-type(4) {
+          border-top: 7px solid #f15a29 !important;
+        }
+        &:nth-of-type(5) {
+          border-top: 7px solid #7f3f98 !important;
+        }
+        &:nth-of-type(6) {
+          border-top: 7px solid #cc0000 !important;
+        }
+        &:nth-of-type(7) {
+          border-top: 7px solid #21409a !important;
+        }
+      }
+    }
+  }
+  .menuOnMobile{
+    display:none;color:white
+  }
+  .itemImg{
+    width:150px;
+    height:150px;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  /*HEADER IMAGE*/
+  .mainImg{
+    height:350px;
+  }
+  .dropDownButton{
+    display:none;
+  }
+  .NavItemDescription > ul > li {
+    display:inline-block;
+    width:13%;
+    font:1.3em Book Antiqua;
+    height:150px;
+  }
+
+  nav > ul > li {
+    font:1.3em Impact;
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  /*HEADER IMAGE*/
+  .mainImg{
+    height:500px;
+  }
+  .dropDownButton{
+    display:none;
+  }
+  .NavItemDescription > ul > li {
+    display:inline-block;
+    width:13%;
+    font:1.5em Book Antiqua;
+    height:150px;
+  }
+  nav > ul > li {
+    font:1.5em Impact;
+  }
+}
+/*NAVIGATION BACKGROUND-COLOR ON HOVER*/
+nav > ul > li {
+  background: #ffffff !important;
+  &:nth-of-type(1):hover {
+    background: #00aeef !important;
+  }
+  &:nth-of-type(2):hover {
+    background: #00a14b !important;
+  }
+  &:nth-of-type(3):hover {
+    background: #ffc522 !important;
+  }
+  &:nth-of-type(4):hover {
+    background: #f15a29 !important;
+  }
+  &:nth-of-type(5):hover {
+    background: #7f3f98 !important;
+  }
+  &:nth-of-type(6):hover {
+    background: #cc0000 !important;
+  }
+  &:nth-of-type(7):hover {
+    background: #21409a !important;
+  }
+}
+
+/*NAVIGATION TEXT COLOR*/
+
+nav > ul > li {
+  &:nth-of-type(1) > a {
+    color: #00aeef !important;
+  }
+  &:nth-of-type(2) > a {
+    color: #00a14b !important;
+  }
+  &:nth-of-type(3) > a {
+    color: #ffc522 !important;
+  }
+  &:nth-of-type(4) > a {
+    color: #f15a29 !important;
+  }
+  &:nth-of-type(5) > a {
+    color: #7f3f98 !important;
+  }
+  &:nth-of-type(6) > a {
+    color: #cc0000 !important;
+  }
+  &:nth-of-type(7) > a {
+    color: #21409a !important;
+  }
+  &:hover > a {
+    color: white !important;
+    text-decoration: none;
+  }
+}
+
+/*NAVIGATION COLOR ON HOVER*/
+
+.NavItemDescription{
+  background:white;
+  display:block;
+}
+
+address{
+
+}
+
+/*FOOTER*/
+.footer{
+  background-color:black;
+  width:100%;
+  height:200px;
+}
+/*TITLE IN FOOTER*/
+.footerTitle{
+  font: 40px Book Antiqua;
+  color:#ffffff;
+}
