@@ -16,14 +16,11 @@ class PostsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct()
-    {
-        $this->middleware('auth', ['except' => ['home', 'index']]);
-    }
+
 
     public function index()
     {
-        $posts = Post::with('PostComment', 'user')->get();
+        $posts = Post::with('PostComment', 'user')->orderBy('created_at', 'desc')->get();
         return view('posts.index')->with('posts', $posts);
     }
     public function comment(Request $request, $id)
@@ -33,7 +30,11 @@ class PostsController extends Controller
         ]);
         $comments = new PostComment;
         $comments->comment = $request->input('message');
-        $comments->user_id = Auth()->user()->id;
+        if(Auth::user()) {
+            $comments->user_id = auth()->user()->id;
+        }else{
+            $comments->user_id = null;
+        }
         $comments->post_id = $id;
         $comments->save();
         return redirect('/')->with('success', 'Успешна публикация');
@@ -73,7 +74,12 @@ class PostsController extends Controller
             'message' => 'required',
         ]);
         $post = new Post;
-        $post->user_id = Auth()->user()->id;
+        
+        if(Auth::user()) {
+        $post->user_id = auth()->user()->id;
+        }else{
+            $post->user_id = null;
+        }
         $post->message = $request->input('message');
         $post->save();
         return redirect('/')->with('success', 'Успешна публикация');
