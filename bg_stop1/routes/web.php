@@ -10,7 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::post('/{id}', 'PostsController@comment');
+
+
+
+
+Route::post('posts/{id}', 'PostsController@comment');
 Route::resource('/', 'PostsController');
 //Route::get('posts', 'PostsController@home');
 
@@ -56,6 +60,7 @@ Route::get('forum/{id}/topics/create', 'ForumController@createPost');
 Route::post('forum/{id}/topics/store', 'ForumController@storePost');
 Route::get('forum/{id}/topics/{topic_id}', 'ForumController@showPost');
 Route::post('forum/{id}/topics/{topic_id}/reply', 'ForumController@reply');
+
 
 
 Route::get('logout', 'Auth\LogoutController@index');
